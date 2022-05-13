@@ -1,0 +1,151 @@
+@import "mixin.scss";
+@import "variable.scss";
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  background: $color-background;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+header {
+  font-family: "Shrikhand", cursive;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+  height: 80px;
+  @include flexCenter;
+}
+.location {
+  @include flexCenter;
+  background: darken($color: $color-background, $amount: 3);
+  .location-icon {
+    color: black;
+    margin-right: 15px;
+  }
+}
+.explore {
+  @include flexCenter;
+  .explore-container {
+    width: 100%;
+    @include flexCenterColumn;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .explore-title {
+    max-width: 250px;
+    margin: 0;
+  }
+  .explore-btn {
+    @include flexCenter;
+    width: 220px;
+    height: 50px;
+    color: white;
+    border-radius: 30px;
+    background: $gradient;
+  }
+}
+.process {
+  @include flexCenter;
+  padding: 15px 0 50px 0;
+  background: lighten($color: $color-background, $amount: 3);
+  .process-container {
+    max-width: 1400px;
+    margin: 0 20px;
+  }
+  .process-all-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .process-step {
+    @include flex;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    background-color: $color-background;
+    align-items: center;
+    margin: 10px 0;
+    @include shadow;
+  }
+  .process-number {
+    position: absolute;
+    left: -10px;
+    background: $color-primary;
+    color: white;
+    padding: 3px 8px 3px 8px;
+    border-radius: 20px;
+  }
+  .process-icons {
+    margin: 0 30px;
+    color: grey;
+  }
+  .process-step-color-difference {
+    background: rgba(147, 86, 220, 0.1);
+  }
+  .fa-store {
+    color: $color-primary;
+  }
+}
+.restaurants {
+  @include flexCenter;
+  margin-bottom: 50px;
+  .restaurant-title {
+    margin: 50px 0 0 0;
+  }
+}
+
+.restaurant-all-cards {
+  @include flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+
+  .restaurant-card {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 5px 5px 0 gray;
+    margin: 10px;
+  }
+  .restaurant-card-img {
+    width: 100%;
+    height: 180px;
+  }
+  .restaurant-text-new {
+    position: absolute;
+    @include flexCenter;
+    width: 80px;
+    height: 30px;
+    background: $color-tertiary;
+    top: 20px;
+    right: 20px;
+  }
+  .restaurant-text-new p {
+    color: darken($color: $color-tertiary, $amount: 40);
+  }
+  .restaurant-card-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+  }
+  .restaurant-card-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    height: 90px;
+  }
+  .card-name {
+    margin: 0;
+  }
+  .card-city {
+    margin: 0;
+  }
+}
