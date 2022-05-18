@@ -1,0 +1,84 @@
+.menu-restaurant-img img {
+  width: 100%;
+  height: 450px;
+  top: -100px;
+  position: relative;
+  z-index: -1;
+}
+.menu {
+  .menu-general {
+    background-color: $color-background;
+    padding: 0 20px;
+    border-radius: 30px 30px 0 0;
+    margin-top: -150px;
+    max-width: 2000px;
+  }
+  .menu-header {
+    @include flexBetween;
+  }
+  .menu-heart {
+    @include flexCenter;
+  }
+  .title-restaurant-menu {
+    @include fontlogo;
+  }
+  .menu-title h3 {
+    font-weight: 400;
+    position: relative;
+  }
+  .menu-title h3::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: $color-tertiary;
+    left: 0;
+    bottom: -8px;
+  }
+  .menu-card {
+    background-color: white;
+    border-radius: 15px;
+    margin: 15px 10px;
+    padding: 20px;
+    @include shadow;
+    @include flexBetween;
+  }
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
+  .menu-text {
+    @include flexColumn;
+  }
+  .text-card-menu {
+    font-weight: 400;
+  }
+  .price-card-menu {
+    display: flex;
+    align-items: flex-end;
+  }
+  .menu-all-blocks {
+    margin: 30px 0;
+  }
+  .button-menu-container {
+    @include flexCenter;
+    margin: 50px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menu {
+    @include flexCenterColumn;
+  }
+  .menu-general {
+    width: 95%;
+  }
+  .menu-all-blocks {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .menu-blocks {
+    @include flexColumn;
+    width: 33%;
+  }
+}

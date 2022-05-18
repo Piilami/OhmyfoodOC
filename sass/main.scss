@@ -1,5 +1,9 @@
-@import "mixin.scss";
-@import "variable.scss";
+@import "../sass/utils/mixin.scss";
+@import "../sass/utils/variable.scss";
+@import "../sass/layout/header.scss";
+@import "../sass/layout/footer.scss";
+@import "../sass/components/buttons.scss";
+@import "../sass/pages/menu.scss";
 
 body {
   font-family: "Roboto", sans-serif;
@@ -10,13 +14,8 @@ a {
   text-decoration: none;
   color: black;
 }
-header {
-  font-family: "Shrikhand", cursive;
-  position: relative;
-  background-color: white;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
-  height: 80px;
-  @include flexCenter;
+img {
+  object-fit: cover;
 }
 .location {
   @include flexCenter;
@@ -38,14 +37,6 @@ header {
     max-width: 250px;
     margin: 0;
   }
-  .explore-btn {
-    @include flexCenter;
-    width: 220px;
-    height: 50px;
-    color: white;
-    border-radius: 30px;
-    background: $gradient;
-  }
 }
 .process {
   @include flexCenter;
@@ -56,8 +47,7 @@ header {
     margin: 0 20px;
   }
   .process-all-steps {
-    display: flex;
-    justify-content: space-between;
+    @include flexBetween;
     flex-wrap: wrap;
     width: 100%;
   }
@@ -97,13 +87,16 @@ header {
   .restaurant-title {
     margin: 50px 0 0 0;
   }
+  .restaurant-container {
+    width: 90%;
+    max-width: 1400px;
+  }
 }
-
+.fa-heart {
+  font-size: 25px;
+}
 .restaurant-all-cards {
-  @include flex;
-  flex-direction: column;
-  align-content: center;
-  flex-wrap: wrap;
+  @include flexCentercontentColumn;
 
   .restaurant-card {
     position: relative;
@@ -132,12 +125,10 @@ header {
   .restaurant-card-img > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 30px 30px 0 0;
   }
   .restaurant-card-text {
-    display: flex;
-    justify-content: space-between;
+    @include flexBetween;
     align-items: center;
     padding: 0 10px 0 10px;
     height: 90px;
@@ -147,5 +138,27 @@ header {
   }
   .card-city {
     margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .process {
+    .process-container {
+      width: 90%;
+    }
+    .process-all-steps {
+      width: 100%;
+    }
+    .process-step {
+      width: 320px;
+    }
+  }
+  .restaurant-all-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .restaurant-card {
+    max-width: 450px;
   }
 }

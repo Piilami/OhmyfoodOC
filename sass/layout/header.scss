@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  height: 80px;
+  @include shadowBlack;
+  @include flexCenter;
+  @include fontlogo;
+}
+.back-button-arrow {
+  position: absolute;
+  left: 40px;
+  font-size: 30px;
+}

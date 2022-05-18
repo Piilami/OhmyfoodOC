@@ -1,0 +1,44 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin flexCentercontentColumn {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+@mixin flex {
+  display: flex;
+}
+@mixin flexRowBetween {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin shadow {
+  box-shadow: 0 5px 5px 0 rgba(214, 214, 214, 0.596);
+}
+
+@mixin shadowBlack {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+@mixin fontlogo {
+  font-family: "Shrikhand", cursive;
+}
