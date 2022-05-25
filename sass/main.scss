@@ -4,6 +4,8 @@
 @import "../sass/layout/footer.scss";
 @import "../sass/components/buttons.scss";
 @import "../sass/pages/menu.scss";
+@import "../sass/pages/loader-animation.scss";
+@import "../sass/pages/animation.scss";
 
 body {
   font-family: "Roboto", sans-serif;
@@ -61,6 +63,10 @@ img {
     align-items: center;
     margin: 10px 0;
     @include shadow;
+    &:hover {
+      @include hoverbutton;
+      cursor: pointer;
+    }
   }
   .process-number {
     position: absolute;

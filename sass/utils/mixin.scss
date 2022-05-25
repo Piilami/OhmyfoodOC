@@ -42,3 +42,9 @@
 @mixin fontlogo {
   font-family: "Shrikhand", cursive;
 }
+
+@mixin hoverbutton {
+  transition-duration: 400ms;
+  opacity: 0.8;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}

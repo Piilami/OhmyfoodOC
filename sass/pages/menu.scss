@@ -36,6 +36,7 @@
     bottom: -8px;
   }
   .menu-card {
+    position: relative;
     background-color: white;
     border-radius: 15px;
     margin: 15px 10px;
@@ -49,13 +50,45 @@
   }
   .menu-text {
     @include flexColumn;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 38px;
+  }
+  .title-card-menu {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: no-wrap;
   }
   .text-card-menu {
     font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .check-icon-container {
+    visibility: hidden;
+    position: absolute;
+    padding-left: 5px;
+    right: 0;
+    top: 0;
+    width: 80px;
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    background: $color-tertiary;
+    color: white;
+  }
+  .fa-circle-check {
+    position: relative;
+    top: 30px;
+    left: 23px;
+    font-size: 20px;
   }
   .price-card-menu {
     display: flex;
     align-items: flex-end;
+    right: 10px;
+    top: 40px;
+    padding-left: 10px;
   }
   .menu-all-blocks {
     margin: 30px 0;
