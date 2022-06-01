@@ -6,6 +6,7 @@
   z-index: 3;
   background-color: white;
   opacity: 0.8;
+  -webkit-animation: fade 2.7s linear;
   animation: fade 2.7s linear;
   visibility: hidden;
   .loader-box {
@@ -31,6 +32,7 @@
     height: 80px;
     border-top: 10px solid $color-primary;
     border-bottom: 10px solid $color-primary;
+    -webkit-animation: spin 0.6s ease 3;
     animation: spin 0.6s ease 3;
     animation-delay: 0.2s;
   }
@@ -43,12 +45,14 @@
     border: 5px solid transparent;
     border-top: 5px solid $color-secondary;
     border-bottom: 5px solid $color-secondary;
+    -webkit-animation: spingrow 1s linear 2;
     animation: spingrow 1s linear 2;
     animation-delay: 0.2s;
   }
 }
 @keyframes spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     visibility: visible;
     opacity: 1;
@@ -57,6 +61,7 @@
     opacity: 1;
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     opacity: 0;
     visibility: hidden;
@@ -64,30 +69,35 @@
 }
 @keyframes spingrow {
   0% {
-    transform: rotatez(0deg), scale(1);
+    -webkit-transform: rotateZ(0deg) scale(1);
+    transform: rotatez(0deg) scale(1);
     visibility: visible;
     opacity: 1;
     border-top-color: $color-tertiary;
     border-bottom-color: $color-tertiary;
   }
   25% {
+    -webkit-transform: rotateZ(90deg) scale(1.5);
     transform: rotatez(90deg) scale(1.25);
     border-top-color: $color-secondary;
     border-bottom-color: $color-secondary;
   }
   50% {
+    -webkit-transform: rotateZ(180deg) scale(1.5);
     transform: rotatez(180deg) scale(1.5);
     opacity: 1;
     border-top-color: $color-secondary;
     border-bottom-color: $color-secondary;
   }
   75% {
+    -webkit-transform: rotateZ(270deg) scale(1.25);
     transform: rotatez(270deg) scale(1.25);
     opacity: 1;
     border-top-color: $color-tertiary;
     border-bottom-color: $color-tertiary;
   }
   100% {
+    -webkit-transform: rotateZ(360deg) scale(1);
     transform: rotatez(360deg) scale(1);
     border-top-color: $color-tertiary;
     border-bottom-color: $color-tertiary;
