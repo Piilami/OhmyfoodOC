@@ -98,9 +98,25 @@ img {
     max-width: 1400px;
   }
 }
+.restaurant-card-heart {
+  width: 25px;
+  height: 25px;
+}
+
 .fa-heart {
   font-size: 25px;
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
 }
+.heart-gradient {
+  color: transparent;
+  background-image: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+}
+
 .restaurant-all-cards {
   @include flexCentercontentColumn;
 

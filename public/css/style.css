@@ -99,6 +99,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 25px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
 }
 .menu .title-restaurant-menu {
   font-family: "Shrikhand", cursive;
@@ -117,12 +122,14 @@ footer {
   bottom: -8px;
 }
 .menu .menu-card {
-  position: relative;
+  height: 78px;
   background-color: white;
   border-radius: 15px;
   margin: 15px 10px;
-  padding: 20px;
   box-shadow: 0 5px 5px 0 rgba(214, 214, 214, 0.596);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -136,12 +143,13 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-left: 10px;
   max-height: 38px;
 }
 .menu .title-card-menu {
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: no-wrap;
+  white-space: nowrap;
 }
 .menu .text-card-menu {
   font-weight: 400;
@@ -149,7 +157,10 @@ footer {
   overflow: hidden;
 }
 .menu .check-icon-container {
-  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
   position: absolute;
   padding-left: 5px;
   right: 0;
@@ -161,17 +172,14 @@ footer {
   color: white;
 }
 .menu .fa-circle-check {
-  position: relative;
-  top: 30px;
-  left: 23px;
-  font-size: 20px;
+  font-size: 30px;
 }
 .menu .price-card-menu {
   display: flex;
   align-items: flex-end;
-  right: 10px;
-  top: 40px;
-  padding-left: 10px;
+  width: 30px;
+  height: 38px;
+  padding: 20px;
 }
 .menu .menu-all-blocks {
   margin: 30px 0;
@@ -181,6 +189,13 @@ footer {
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+}
+
+.menu-heart .fa-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @media screen and (min-width: 1200px) {
@@ -212,51 +227,51 @@ footer {
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 3;
   background-color: white;
   opacity: 0.8;
-  animation: fade 3.3s linear;
+  animation: fade 2.7s linear;
   visibility: hidden;
-  /*.loader-spin {
-    position: fixed;
-    border-radius: 100px;
-    width: 100px;
-    height: 100px;
-    visibility: hidden;
-    border: 10px solid transparent;
-  }
-  .loader-spin::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    border: 10px solid transparent;
-    border-radius: 100px;
-    width: 100px;
-    height: 100px;
-    border-right: 10px solid $color-tertiary;
-    animation: spin 1.5s linear;
-    animation-iteration-count: 1;
-  }
-  .loader-spin::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    border-radius: 100px;
-    width: 100px;
-    height: 100px;
-    border: 10px solid transparent;
-    border-left: 10px solid $color-secondary;
-    animation: spin 1.5s linear;
-    animation-delay: 1.4s;
-    animation-iteration-count: 1;
-  }*/
 }
 .loader .loader-box {
   position: fixed;
   width: 100px;
   height: 100px;
+}
+.loader .loader-spin {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  visibility: hidden;
+  border: 10px solid transparent;
+}
+.loader .loader-spin::before {
+  content: "";
+  position: fixed;
+  border: 10px solid transparent;
+  border-radius: 100px;
+  width: 80px;
+  height: 80px;
+  border-top: 10px solid #9356dc;
+  border-bottom: 10px solid #9356dc;
+  animation: spin 0.6s ease 3;
+  animation-delay: 0.2s;
+}
+.loader .loader-spin::after {
+  content: "";
+  position: fixed;
+  border-radius: 25px;
+  width: 25px;
+  height: 25px;
+  border: 5px solid transparent;
+  border-top: 5px solid #ff79da;
+  border-bottom: 5px solid #ff79da;
+  animation: spingrow 1s linear 2;
+  animation-delay: 0.2s;
 }
 
 @keyframes spin {
@@ -270,6 +285,39 @@ footer {
   }
   100% {
     transform: rotate(360deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spingrow {
+  0% {
+    transform: rotatez(0deg), scale(1);
+    visibility: visible;
+    opacity: 1;
+    border-top-color: #99e2d0;
+    border-bottom-color: #99e2d0;
+  }
+  25% {
+    transform: rotatez(90deg) scale(1.25);
+    border-top-color: #ff79da;
+    border-bottom-color: #ff79da;
+  }
+  50% {
+    transform: rotatez(180deg) scale(1.5);
+    opacity: 1;
+    border-top-color: #ff79da;
+    border-bottom-color: #ff79da;
+  }
+  75% {
+    transform: rotatez(270deg) scale(1.25);
+    opacity: 1;
+    border-top-color: #99e2d0;
+    border-bottom-color: #99e2d0;
+  }
+  100% {
+    transform: rotatez(360deg) scale(1);
+    border-top-color: #99e2d0;
+    border-bottom-color: #99e2d0;
     opacity: 0;
     visibility: hidden;
   }
@@ -330,19 +378,19 @@ footer {
 
 /* card menu validation animation */
 /* check circle animation */
-.menu-card:hover > .price-card-menu {
+.menu-card:hover .price-card-menu {
   animation: slide-price 0.7s both;
 }
 
-.menu-card:hover > .check-icon-container {
+.menu-card:hover .check-icon-container {
   visibility: visible;
-  right: 0;
+  display: flex;
   animation: check-container-anim 0.7s both;
 }
 
-.menu-card:hover > .fa-circle-check {
-  animation: rotate-circle-check 0.7s linear both;
-  animation-delay: 0.5s;
+.fa-circle-check {
+  -webkit-animation: rotate-circle-check 0.6s ease-in-out both;
+  animation: rotate-circle-check 0.6s ease-in-out both;
 }
 
 @keyframes check-container-anim {
@@ -365,10 +413,29 @@ footer {
 }
 @keyframes rotate-circle-check {
   0% {
-    transform: rotate(-360deg);
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(0);
+    transform: rotate(360deg);
+  }
+}
+/* animation coeur */
+.restaurant-card-heart:hover .heart-gradient {
+  opacity: 1;
+  animation: heartfill 0.3s linear;
+}
+
+.menu-heart:hover .heart-gradient {
+  opacity: 1;
+  animation: heartfill 0.3s linear;
+}
+
+@keyframes heartfill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 body {
@@ -482,8 +549,24 @@ img {
   max-width: 1400px;
 }
 
+.restaurant-card-heart {
+  width: 25px;
+  height: 25px;
+}
+
 .fa-heart {
   font-size: 25px;
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+}
+
+.heart-gradient {
+  color: transparent;
+  background-image: linear-gradient(180deg, #ff79da 10%, #9356dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
 }
 
 .restaurant-all-cards {

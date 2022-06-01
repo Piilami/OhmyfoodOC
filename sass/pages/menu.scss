@@ -18,6 +18,11 @@
   }
   .menu-heart {
     @include flexCenter;
+    position: relative;
+    top: 25px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
   }
   .title-restaurant-menu {
     @include fontlogo;
@@ -36,12 +41,12 @@
     bottom: -8px;
   }
   .menu-card {
-    position: relative;
+    height: 78px;
     background-color: white;
     border-radius: 15px;
     margin: 15px 10px;
-    padding: 20px;
     @include shadow;
+    @include flexCenter;
     @include flexBetween;
   }
   p {
@@ -53,12 +58,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-left: 10px;
     max-height: 38px;
   }
   .title-card-menu {
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: no-wrap;
+    white-space: nowrap;
   }
   .text-card-menu {
     font-weight: 400;
@@ -66,7 +72,8 @@
     overflow: hidden;
   }
   .check-icon-container {
-    visibility: hidden;
+    @include flexCenter;
+    display: none;
     position: absolute;
     padding-left: 5px;
     right: 0;
@@ -78,17 +85,14 @@
     color: white;
   }
   .fa-circle-check {
-    position: relative;
-    top: 30px;
-    left: 23px;
-    font-size: 20px;
+    font-size: 30px;
   }
   .price-card-menu {
     display: flex;
     align-items: flex-end;
-    right: 10px;
-    top: 40px;
-    padding-left: 10px;
+    width: 30px;
+    height: 38px;
+    padding: 20px;
   }
   .menu-all-blocks {
     margin: 30px 0;
@@ -96,6 +100,14 @@
   .button-menu-container {
     @include flexCenter;
     margin: 50px 0;
+  }
+}
+.menu-heart {
+  .fa-heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
