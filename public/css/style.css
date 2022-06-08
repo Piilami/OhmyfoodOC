@@ -146,6 +146,12 @@ footer {
   padding-left: 10px;
   max-height: 38px;
 }
+.menu .price-check-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .menu .title-card-menu {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -161,7 +167,6 @@ footer {
   justify-content: center;
   align-items: center;
   display: none;
-  position: absolute;
   padding-left: 5px;
   right: 0;
   top: 0;
@@ -419,10 +424,10 @@ footer {
 }
 @keyframes slide-price {
   0% {
-    transform: translateX(0);
+    transform: translateX(80px);
   }
   100% {
-    transform: translateX(-80px);
+    transform: translateX(0px);
   }
 }
 @keyframes rotate-circle-check {
